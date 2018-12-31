@@ -31,13 +31,14 @@ func main() {
   }
 
   if event.Metrics != nil {
-    for _, point := range(event.Metrics.Points) {
-      point.Tags = append(point.Tags, &types.MetricTag{ Name: "entity", Value: event.Entity.Name } )
+    for _, point := range( event.Metrics.Points ) {
+      point.Tags = append( point.Tags, &types.MetricTag{ Name: "entity", Value: event.Entity.Name } )
       if event.Entity.Labels != nil {
-        for name, value := range(event.Entity.Labels) {
+        for name, value := range( event.Entity.Labels ) {
           point.Tags = append( point.Tags, &types.MetricTag{ Name: name, Value: value } )
         }
       }
+      point.Tags = append( point.Tags, &types.MetricTag{ Name: "check", Value: event.Check.Name } )
     }
   }
 
