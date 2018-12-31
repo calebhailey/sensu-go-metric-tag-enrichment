@@ -80,9 +80,9 @@ extracted metrics with tags. Off to a good start!
   - `--entity-labels` toggle addition of Entity Labels as tags (source:
     `event.Entity.Labels`).
   - `--check-name` toggle addition of a `"check"` tag (source:
-    `event.Check.Name`)
+    `event.Check.Name`).
   - `--check-labels` toggle addition of Check Labels as tags (source:
-    `event.Check.Labels`
+    `event.Check.Labels`).
 - Add support for customizing the behavior of the Entity Label and Check Label
   toggles; e.g.:
   - `--entity-labels region,datacenter` filter which Entity Labels are added as
