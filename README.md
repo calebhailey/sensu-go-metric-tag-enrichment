@@ -68,12 +68,24 @@ please open an issue to help me learn! :) Thanks in advance for your feedback!
 
 The motivation for this project was to attempt implementing a solution for an
 outstanding [Sensu Go feature request][2160] to provide support for enriching
-extracted metrics with tags. Off to a good start! 
+extracted metrics with tags. Off to a good start!
 
 [2160]: https://github.com/sensu/sensu-go/issues/2160
 
-## Roamdap
+## Roadmap
 
-- Add support for configuring the behavior of the mutator (e.g. only add an
-  `"entity"` tag, or only add some subset of entity Labels as tags, or
-  optionally add Check Labels as tags; etc)
+- Add support for toggling the behavior of the mutator; e.g.:
+  - `--entity-name` toggle addition of an `"entity"` tag (source:
+    `event.Entity.Name`).
+  - `--entity-labels` toggle addition of Entity Labels as tags (source:
+    `event.Entity.Labels`).
+  - `--check-name` toggle addition of a `"check"` tag (source:
+    `event.Check.Name`)
+  - `--check-labels` toggle addition of Check Labels as tags (source:
+    `event.Check.Labels`
+- Add support for customizing the behavior of the Entity Label and Check Label
+  toggles; e.g.:
+  - `--entity-labels region,datacenter` filter which Entity Labels are added as
+    tags.
+  - `--check-labels application_id,team` filter which Check Labels are added as
+    tags.
