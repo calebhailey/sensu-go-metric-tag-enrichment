@@ -1,0 +1,157 @@
+{
+  "timestamp": 1546209195,
+  "entity": {
+    "entity_class": "agent",
+    "system": {
+      "hostname": "c6cc15000a01",
+      "os": "linux",
+      "platform": "debian",
+      "platform_family": "debian",
+      "platform_version": "9.6",
+      "network": {
+        "interfaces": [
+          {
+            "name": "lo",
+            "addresses": [
+              "127.0.0.1/8"
+            ]
+          },
+          {
+            "name": "tunl0",
+            "addresses": null
+          },
+          {
+            "name": "ip6tnl0",
+            "addresses": null
+          },
+          {
+            "name": "eth0",
+            "mac": "02:42:ac:12:00:07",
+            "addresses": [
+              "172.18.0.7/16"
+            ]
+          }
+        ]
+      },
+      "arch": "amd64"
+    },
+    "subscriptions": [
+      "docker",
+      "poller",
+      "entity:c6cc15000a01"
+    ],
+    "last_seen": 1546208363,
+    "deregister": true,
+    "deregistration": {},
+    "user": "agent",
+    "redact": [
+      "password",
+      "passwd",
+      "pass",
+      "api_key",
+      "api_token",
+      "access_key",
+      "secret_key",
+      "private_key",
+      "secret"
+    ],
+    "metadata": {
+      "name": "c6cc15000a01",
+      "namespace": "default",
+      "labels": {
+        "region": "us-west-1"
+      }
+    }
+  },
+  "check": {
+    "command": "check_http -H sensu-asset-server -N",
+    "handlers": [],
+    "high_flap_threshold": 0,
+    "interval": 10,
+    "low_flap_threshold": 0,
+    "publish": true,
+    "runtime_assets": [
+      "nagios_check_http_v0.1"
+    ],
+    "subscriptions": [
+      "docker"
+    ],
+    "proxy_entity_name": "",
+    "check_hooks": null,
+    "stdin": false,
+    "subdue": null,
+    "ttl": 0,
+    "timeout": 0,
+    "round_robin": false,
+    "duration": 0.0199556,
+    "executed": 1546209195,
+    "history": [
+      {
+        "status": 0,
+        "executed": 1546209145
+      },
+      {
+        "status": 0,
+        "executed": 1546209155
+      },
+      {
+        "status": 0,
+        "executed": 1546209165
+      },
+      {
+        "status": 0,
+        "executed": 1546209175
+      },
+      {
+        "status": 0,
+        "executed": 1546209185
+      },
+      {
+        "status": 0,
+        "executed": 1546209195
+      }
+    ],
+    "issued": 1546209195,
+    "output": "HTTP OK: HTTP/1.1 200 OK - 845 bytes in 0.015 second response time |time=0.015248s;;;0.000000;10.000000 size=845B;;;0\n",
+    "state": "passing",
+    "status": 0,
+    "total_state_change": 0,
+    "last_ok": 1546209195,
+    "occurrences": 1,
+    "occurrences_watermark": 1,
+    "output_metric_format": "nagios_perfdata",
+    "output_metric_handlers": [
+      "influxdb"
+    ],
+    "env_vars": null,
+    "metadata": {
+      "name": "sensu_asset_index_response",
+      "namespace": "default",
+      "labels": {
+        "aggregate": "http_service"
+      }
+    }
+  },
+  "metrics": {
+    "handlers": [
+      "influxdb"
+    ],
+    "points": [
+      {
+        "name": "time",
+        "value": 0.015248,
+        "timestamp": 1546209195,
+        "tags": []
+      },
+      {
+        "name": "size",
+        "value": 845,
+        "timestamp": 1546209195,
+        "tags": []
+      }
+    ]
+  },
+  "metadata": {
+    "namespace": "default"
+  }
+}
