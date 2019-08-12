@@ -33,6 +33,7 @@ func main() {
   if event.Metrics != nil {
     for _, point := range( event.Metrics.Points ) {
       point.Tags = append( point.Tags, &types.MetricTag{ Name: "entity", Value: event.Entity.Name } )
+      point.Tags = append( point.Tags, &types.MetricTag{ Name: "namespace", Value: event.Entity.Namespace } )
       if event.Entity.Labels != nil {
         for name, value := range( event.Entity.Labels ) {
           point.Tags = append( point.Tags, &types.MetricTag{ Name: name, Value: value } )
