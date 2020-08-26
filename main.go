@@ -39,7 +39,9 @@ func main() {
           point.Tags = append( point.Tags, &types.MetricTag{ Name: name, Value: value } )
         }
       }
-      point.Tags = append( point.Tags, &types.MetricTag{ Name: "check", Value: event.Check.Name } )
+      if event.Check != nil {
+        point.Tags = append( point.Tags, &types.MetricTag{ Name: "check", Value: event.Check.Name } )
+      }
     }
   }
 
