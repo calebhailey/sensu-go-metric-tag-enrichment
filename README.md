@@ -66,7 +66,7 @@ following command to add the asset:
 $ sensuctl asset add calebhailey/sensu-metric-tag-mutator
 ```
 
-If you're using an earlier version of sensuctl, you can find the asset on the [Bonsai Asset Index][https://bonsai.sensu.io/assets/calebhailey/sensu-metric-tag-mutator].
+If you're using an earlier version of sensuctl, you can find the asset on the [Bonsai Asset Index](https://bonsai.sensu.io/assets/calebhailey/sensu-metric-tag-mutator).
 
 ### Mutator definition
 
