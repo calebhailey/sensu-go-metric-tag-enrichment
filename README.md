@@ -1,8 +1,8 @@
-[![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/calebhailey/sensu-metric-tag-mutator)
-![Go Test](https://github.com/calebhailey/sensu-metric-tag-mutator/workflows/Go%20Test/badge.svg)
-![goreleaser](https://github.com/calebhailey/sensu-metric-tag-mutator/workflows/goreleaser/badge.svg)
+[![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/calebhailey/sensu-go-metric-tag-enrichment)
+![Go Test](https://github.com/calebhailey/sensu-go-metric-tag-enrichment/workflows/Go%20Test/badge.svg)
+![goreleaser](https://github.com/calebhailey/sensu-go-metric-tag-enrichment/workflows/goreleaser/badge.svg)
 
-# Sensu Metric Tag Mutator
+# Sensu Go Metric Tag Enrichment
 
 ## Table of Contents
 - [Overview](#overview)
@@ -16,7 +16,7 @@
 
 ## Overview
 
-The Sensu Metric Tag Mutator is a Sensu Go plugin for enriching metric points 
+Sensu Go Metric Tag Enrichment is a Sensu Go plugin for enriching metric points 
 with [Entity metadata][entity-metadata] (e.g. entity name, labels) and 
 [Check metadata][check-metadata] (e.g. check name, labels), adding them as 
 [Metric Tags][metric-tags]. The Sensu Metric Tag Mutator is useful for adding 
@@ -33,8 +33,8 @@ formats that don't support tags (e.g. Nagios Perfdata).
 Enrich Sensu Metrics with Event, Entity, and Check labels as metric tags.
 
 Usage:
-  sensu-metric-tag-mutator [flags]
-  sensu-metric-tag-mutator [command]
+  sensu-go-metric-tag-enrichment [flags]
+  sensu-go-metric-tag-enrichment [command]
 
 Available Commands:
   help        Help about any command
@@ -47,11 +47,11 @@ Flags:
       --entity-labels    Add a tag for every entity label to every metric.
       --event-labels     Add a tag for every event label to every metric.
   -f, --filter string    Comma separated list of tags to exclude. (default "sensu.io/managed_by")
-  -h, --help             help for sensu-metric-tag-mutator
+  -h, --help             help for sensu-go-metric-tag-enrichment
   -n, --namespace        Add a "namespace" tag containing the entity namespace to every metric.
   -r, --require string   Comma separated list of tags to include on all metrics, even if no matching  labels are found
 
-Use "sensu-metric-tag-mutator [command] --help" for more information about a command.
+Use "sensu-go-metric-tag-enrichment [command] --help" for more information about a command.
 ```
 
 ## Configuration
@@ -63,10 +63,10 @@ consider doing so! If you're using sensuctl 5.13 with Sensu Backend 5.13 or late
 following command to add the asset:
 
 ```
-$ sensuctl asset add calebhailey/sensu-metric-tag-mutator
+$ sensuctl asset add calebhailey/sensu-go-metric-tag-enrichment
 ```
 
-If you're using an earlier version of sensuctl, you can find the asset on the [Bonsai Asset Index](https://bonsai.sensu.io/assets/calebhailey/sensu-metric-tag-mutator).
+If you're using an earlier version of sensuctl, you can find the asset on the [Bonsai Asset Index](https://bonsai.sensu.io/assets/calebhailey/sensu-go-metric-tag-enrichment).
 
 ### Mutator definition
 
@@ -75,10 +75,10 @@ If you're using an earlier version of sensuctl, you can find the asset on the [B
 type: Mutator
 api_version: core/v2
 metadata:
-  name: sensu-metric-tag-mutator
+  name: sensu-go-metric-tag-enrichment
 spec:
   command: >- 
-    sensu-metric-tag-mutator
+    sensu-go-metric-tag-enrichment
     --namespace 
     --entity 
     --check
@@ -87,7 +87,7 @@ spec:
     --check-labels
     --filter sensu.io/managed_by,foo,bar 
   runtime_assets:
-  - calebhailey/sensu-metric-tag-mutator
+  - calebhailey/sensu-go-metric-tag-enrichment
 ```
 
 ## Installation from source
@@ -96,7 +96,7 @@ The preferred way of installing and deploying this plugin is to use it as an Ass
 like to compile and install the plugin from source or contribute to it, download the latest version
 or create an executable script from this source.
 
-From the local path of the sensu-metric-tag-mutator repository:
+From the local path of the sensu-go-metric-tag-enrichment repository:
 
 ```
 go build
